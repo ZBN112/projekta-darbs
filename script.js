@@ -1,4 +1,4 @@
-const reactionButton = document.getElementById("reactionButton");
+const reactionButton = document.getElementById("ReactionButton");
 const reactionTimeDisplay = document.getElementById("reactionTime");
 let startTime, endTime, timeoutId;
 
