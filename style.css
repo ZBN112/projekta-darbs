@@ -1,16 +1,68 @@
-#ReactionButton {
-    width: 500px;
-    height: 225px;
-    font-size: 160px;
+body {
+    background-color: #add8e6 !important
+    ; 
+    
   }
 .custom-heading {
-    font-size: 150px;
-    }
-p{
-    font-size: 75px;
+    font-size: 400%;
+  color: #3498db; 
 }
-.container {
-    width: 400px; 
-    height: 300px; 
-    overflow: hidden; 
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#ReactionButton {
+  background-color: #3498db; 
+  color: #fff; 
+  font-size: 20px; 
+  padding: 15px 30px; 
+}
+
+#refreshButton {
+  background-color: #e74c3c; 
+  color: #fff; 
+}
+
+#reactionTime {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+
+/* Increase font size for mobile */
+@media (max-width: 767px) {
+  #ReactionButton {
+    background-color: #3498db; 
+    margin-bottom: 10px;
+  }
+
+  #refreshButton {
+    background-color: #e74c3c; 
+  }
+
+  #ReactionButton,
+  #refreshButton {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Increase font size for PCs */
+@media (min-width: 768px) {
+  #ReactionButton {
+    padding: 200px  400px;
+    font-size: 24px; 
+  }
+
+  #refreshButton {
+    padding: 100px 300px;
+    font-size: 24px; 
+    margin-left: 10px; 
+  }
 }
