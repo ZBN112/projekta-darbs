@@ -51,3 +51,10 @@ refreshButton.addEventListener("click", function () {
 function getRandomDelay(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+async function recordReactionTime(data) {
+  const baseUrl = "https://programmesana2.lv/api/rihards-db/post";
+  const url = `${baseUrl}?name=${data.name}&reactionTime=${data.reactionTime}&age=${data.age}&key=rihards123`;
+  //save results in db
+  await fetch(url);
+}
