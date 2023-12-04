@@ -1,17 +1,30 @@
 const reactionButton = document.getElementById("ReactionButton");
 const reactionTimeDisplay = document.getElementById("reactionTime");
+const nameInput = document.getElementById("nameInput");
+const ageInput = document.getElementById("ageInput")
+const refreshButton = document.getElementById("refreshButton");
 let startTime, endTime, timeoutId;
 
 function startReactionTimeTest() {
+  const name = nameInput.value.trim();
+  const age = ageInput.value
+
+  if (!name || !age) {
+    alert("Please enter your name before starting the reaction time test.");
+    return;
+  }
+
   reactionButton.style.backgroundColor = "red";
   reactionButton.disabled = true;
 
-
   const delay = getRandomDelay(1000, 5000);
-  timeoutId = setTimeout(changeButtonColor, delay);
+  timeoutId = setTimeout(() => {
+    changeButtonColor(name);
+  }, delay);
 }
 
-function changeButtonColor() {
+function changeButtonColor(name) {
+  age = ageInput.value
   reactionButton.style.backgroundColor = "green";
   startTime = new Date().getTime();
   reactionButton.disabled = false;
@@ -19,15 +32,20 @@ function changeButtonColor() {
   reactionButton.onclick = function () {
     endTime = new Date().getTime();
     const reactionTime = endTime - startTime;
-    reactionTimeDisplay.textContent = `Tavs reakcijas laiks : ${reactionTime} ms`;
-    clearTimeout(timeoutId); 
+
+    reactionTimeDisplay.textContent = `Reakcijas laiks: ${reactionTime} ms`;
+
+    recordReactionTime({ name, reactionTime ,age});
+
+    clearTimeout(timeoutId);
     reactionButton.style.backgroundColor = "red";
     reactionButton.disabled = true;
     reactionButton.onclick = null;
   };
 }
+
 refreshButton.addEventListener("click", function () {
-  location.reload(); 
+  location.reload();
 });
 
 function getRandomDelay(min, max) {
