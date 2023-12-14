@@ -10,7 +10,7 @@ function startReactionTimeTest() {
   const age = ageInput.value
 
   if (!name || !age) {
-    alert("Please enter your name before starting the reaction time test.");
+    alert("Ievadiet vārdu un  vecumu.");
     return;
   }
 
